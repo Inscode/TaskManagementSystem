@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px; // Adds space between the top and the heading
+  height: auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px; // Adds space between the heading and the form
+  position: relative; // Ensures it doesn't overlap other elements
+  z-index: 1; // Ensures it stays above the form
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  position: relative; // Keeps it within its container
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  h2 {
+    font-size: 20px; // Adjust font size for smaller screens
+  }
+  .container {
+    padding-top: 30px; // Adjust padding for smaller screens
+  }
+  mat-form-field {
+    margin-bottom: 15px; // Reduce margin for compact spacing
+  }
+}

@@ -28,7 +28,8 @@ public class JwtUtil {
     }
 
     private Key getSigningKey(){
-        return Keys.secretKeyFor(SignatureAlgorithm.HS256);
+        byte[] keyBytes = Decoders.BASE64.decode("9inl9inleljijdsljfjs98049832jfsldj9inleljijdsljfjs98049832jfsldj");
+        return Keys.hmacShaKeyFor(keyBytes);
     }
 
     public boolean isTokenValid(String token, UserDetails userDetails){

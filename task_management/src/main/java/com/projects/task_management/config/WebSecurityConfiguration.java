@@ -35,7 +35,7 @@ public class WebSecurityConfiguration {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request -> request.requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/api/admin/**").hasAnyAuthority(UserRole.ADMIN.name())
+                .requestMatchers("/api/admin/**").permitAll()
                                 .requestMatchers("/api/employee/**").hasAnyAuthority(UserRole.EMPLOYEE.name())
                                 .anyRequest().authenticated()).sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
                 .authenticationProvider(authenticationProvider()).addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
