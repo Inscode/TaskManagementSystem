@@ -54,7 +54,10 @@
     <mat-form-field appearance="outline" class="form-field">
       <mat-label>Select the Employee</mat-label>
       <mat-select name="employeeId" formControlName="employeeId">
-        <mat-option *ngFor="let employee of listOfEmployees" [value]="employee">
+        <mat-option
+          *ngFor="let employee of listOfEmployees"
+          [value]="employee.id"
+        >
           {{ employee.name }}
         </mat-option>
       </mat-select>
